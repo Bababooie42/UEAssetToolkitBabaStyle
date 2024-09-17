@@ -789,6 +789,14 @@ bool FBlueprintGeneratorUtils::CreateNewBlueprintFunctions(UBlueprint* Blueprint
 				CreateFunctionOverride(Blueprint, OverridenFunction, bShouldGenerateAsEvent, true);
 				bChangedFunctionsOrParameters = true;
 			}
+			else if (FunctionImplementation != NULL && bCreateFunctionOverrides) {
+				// TODO: Only if function signature changed
+				const bool CurrentDisableOrphanPinSaving = (*FunctionImplementation)->bDisableOrphanPinSaving;
+				(*FunctionImplementation)->bDisableOrphanPinSaving = true;
+				(*FunctionImplementation)->ReconstructNode();
+				(*FunctionImplementation)->bDisableOrphanPinSaving = CurrentDisableOrphanPinSaving;
+				bChangedFunctionsOrParameters = true;
+			}
 			continue;
 		}
 		
