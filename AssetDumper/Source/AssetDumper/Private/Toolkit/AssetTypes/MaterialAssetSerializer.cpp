@@ -4,7 +4,6 @@
 #include "Toolkit/PropertySerializer.h"
 #include "Toolkit/AssetDumping/AssetTypeSerializerMacros.h"
 #include "Toolkit/AssetDumping/SerializationContext.h"
-#include "AssetDumperModule.h"
 #include "MaterialCachedData.h"
 
 void UMaterialAssetSerializer::SerializeAsset(TSharedRef<FSerializationContext> Context) const {

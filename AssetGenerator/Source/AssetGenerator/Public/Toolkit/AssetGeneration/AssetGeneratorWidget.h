@@ -1,6 +1,8 @@
 #pragma once
-#include "AssetGenerationProcessor.h"
-#include "Slate.h"
+
+#include "AssetDumpViewWidget.h"
+#include "AssetGeneration/AssetGeneratorLocalSettings.h"
+#include "Widgets/SCompoundWidget.h"
 
 class SAssetGeneratorWidget : public SCompoundWidget {
 public:
@@ -11,9 +13,9 @@ public:
 
     void Construct(const FArguments& InArgs);
 protected:
-	class UAssetGeneratorLocalSettings* LocalSettings;
-	TSharedPtr<class SAssetDumpViewWidget> AssetDumpViewWidget;
-	TSharedPtr<class SEditableTextBox> InputDumpPathText;
+	UAssetGeneratorLocalSettings* LocalSettings;
+	TSharedPtr<SAssetDumpViewWidget> AssetDumpViewWidget;
+	TSharedPtr<SEditableTextBox> InputDumpPathText;
 
 	TSharedRef<SWidget> CreateAssetTypeFilterCategory();
 	TSharedRef<SWidget> CreateSettingsCategory();

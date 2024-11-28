@@ -1,5 +1,4 @@
 #pragma once
-#include "Slate.h"
 
 struct ASSETGENERATOR_API FAssetDumpTreeNode : TSharedFromThis<FAssetDumpTreeNode> {
 public:

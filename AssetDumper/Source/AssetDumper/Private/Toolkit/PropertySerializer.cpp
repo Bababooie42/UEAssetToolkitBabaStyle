@@ -4,8 +4,6 @@
 
 DECLARE_LOG_CATEGORY_CLASS(LogPropertySerializer, Error, Log);
 
-PRAGMA_DISABLE_OPTIMIZATION
-
 void FDateTimeSerializer::Serialize(UScriptStruct* Struct, const TSharedPtr<FJsonObject> JsonValue, const void* StructData, TArray<int32>* OutReferencedSubobjects) {
 	const FDateTime* DateTime = (const FDateTime*) StructData;
 	JsonValue->SetStringField(TEXT("Ticks"), FString::Printf(TEXT("%llu"), DateTime->GetTicks()));
@@ -748,5 +746,3 @@ FStructSerializer* UPropertySerializer::GetStructSerializer(UScriptStruct* Struc
 	TSharedPtr<FStructSerializer> const* StructSerializer = StructSerializers.Find(Struct);
 	return StructSerializer && ensure(StructSerializer->IsValid()) ? StructSerializer->Get() : FallbackStructSerializer.Get();
 }
-
-PRAGMA_ENABLE_OPTIMIZATION

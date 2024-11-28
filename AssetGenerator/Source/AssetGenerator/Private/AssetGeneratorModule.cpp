@@ -1,5 +1,4 @@
 ﻿#include "AssetGeneratorModule.h"
-#include "ContentBrowserModule.h"
 #include "WorkspaceMenuStructure.h"
 #include "Toolkit/AssetGeneration/AssetGeneratorWidget.h"
 #include "WorkspaceMenuStructureModule.h"

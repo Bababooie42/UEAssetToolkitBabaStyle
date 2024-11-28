@@ -3,6 +3,7 @@
 #include "Toolkit/AssetDumping/AssetRegistryViewWidget.h"
 #include "Toolkit/AssetDumping/AssetTypeSerializer.h"
 #include "Util/FileDialogHelper.h"
+#include "Widgets/Input/SSlider.h"
 
 #define LOCTEXT_NAMESPACE "AssetDumper"
 

@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "CoreMinimal.h"
-#include "Toolkit/AssetGeneration/AssetGenerationUtil.h"
 #include "Toolkit/AssetTypeGenerator/BlueprintGenerator.h"
 #include "Engine/Blueprint.h"
 #include "AnimBlueprintGenerator.generated.h"

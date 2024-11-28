@@ -1,5 +1,4 @@
 #include "Toolkit/AssetTypes/FbxMeshExporter.h"
-#include "AnimEncoding.h"
 #include "AssetDumperModule.h"
 #include "Rendering/SkeletalMeshLODRenderData.h"
 #include "Rendering/SkeletalMeshRenderData.h"

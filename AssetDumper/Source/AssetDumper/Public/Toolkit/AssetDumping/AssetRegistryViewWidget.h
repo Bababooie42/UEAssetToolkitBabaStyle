@@ -1,5 +1,4 @@
 #pragma once
-#include "Slate.h"
 
 /** Struct holding information about unknown asset class */
 struct ASSETDUMPER_API FUnknownAssetClass {

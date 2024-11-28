@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AssetGeneration/KismetIntermediateFormat.h"
-#include "Json.h"
 
 /**
  * Handles transformation of kismet bytecode into the intermediate format

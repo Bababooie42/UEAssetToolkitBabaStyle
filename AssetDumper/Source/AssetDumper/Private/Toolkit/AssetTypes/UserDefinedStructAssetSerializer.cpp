@@ -2,7 +2,6 @@
 #include "Engine/UserDefinedStruct.h"
 #include "Toolkit/AssetDumping/SerializationContext.h"
 #include "Toolkit/AssetDumping/AssetTypeSerializerMacros.h"
-#include "Toolkit/ObjectHierarchySerializer.h"
 #include "Toolkit/PropertySerializer.h"
 #include "Toolkit/AssetTypes/AssetHelper.h"
 

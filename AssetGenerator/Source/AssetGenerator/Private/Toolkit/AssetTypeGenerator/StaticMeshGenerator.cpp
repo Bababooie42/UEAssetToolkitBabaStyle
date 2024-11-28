@@ -1,6 +1,5 @@
 #include "Toolkit/AssetTypeGenerator/StaticMeshGenerator.h"
 #include "AutomatedAssetImportData.h"
-#include "MeshDescription.h"
 #include "AI/Navigation/NavCollisionBase.h"
 #include "Dom/JsonObject.h"
 #include "Toolkit/ObjectHierarchySerializer.h"

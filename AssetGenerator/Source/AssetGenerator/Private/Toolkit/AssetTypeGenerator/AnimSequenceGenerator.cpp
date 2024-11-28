@@ -124,13 +124,13 @@ bool UAnimSequenceGenerator::IsAnimationPropertiesUpToDate(UAnimSequence* Asset)
 		return false;
 	}
 	
-	int MaxNotifyTrack = 0;
+	int MaxNotifyTrack = 1;
 
 	for (const FAnimNotifyEvent& Notify : Asset->Notifies) {
 		MaxNotifyTrack = FMath::Max(MaxNotifyTrack, Notify.TrackIndex);
 	}
 
-	if (MaxNotifyTrack >= Asset->AnimNotifyTracks.Num()) {
+	if (MaxNotifyTrack >= 0 && !Asset->AnimNotifyTracks.IsValidIndex(MaxNotifyTrack)) {
 		return false;
 	}
 

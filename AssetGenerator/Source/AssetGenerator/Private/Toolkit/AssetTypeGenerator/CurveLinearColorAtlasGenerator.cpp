@@ -1,6 +1,5 @@
 #include "Toolkit/AssetTypeGenerator/CurveLinearColorAtlasGenerator.h"
 #include "Curves/CurveLinearColorAtlas.h"
-#include "Toolkit/ObjectHierarchySerializer.h"
 #include "Toolkit/AssetTypeGenerator/Texture2DGenerator.h"
 
 void UCurveLinearColorAtlasGenerator::CreateAssetPackage() {

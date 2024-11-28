@@ -2,7 +2,6 @@
 #include "Dom/JsonObject.h"
 #include "Internationalization/StringTable.h"
 #include "Internationalization/StringTableCore.h"
-#include "Toolkit/ObjectHierarchySerializer.h"
 
 void UStringTableGenerator::CreateAssetPackage() {
 	UPackage* NewPackage = CreatePackage(*GetPackageName().ToString());

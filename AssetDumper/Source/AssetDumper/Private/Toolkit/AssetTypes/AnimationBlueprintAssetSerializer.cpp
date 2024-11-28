@@ -3,7 +3,6 @@
 #include "Animation/AnimBlueprint.h"
 #include "Animation/AnimBlueprintGeneratedClass.h"
 #include "Toolkit/ObjectHierarchySerializer.h"
-#include "Toolkit/PropertySerializer.h"
 #include "Toolkit/AssetDumping/AssetTypeSerializerMacros.h"
 #include "Toolkit/AssetDumping/SerializationContext.h"
 

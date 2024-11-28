@@ -3,7 +3,6 @@
 #include "UObject/Package.h"
 
 DECLARE_LOG_CATEGORY_CLASS(LogObjectHierarchySerializer, All, All);
-PRAGMA_DISABLE_OPTIMIZATION
 
 TSet<FName> UObjectHierarchySerializer::UnhandledNativeClasses;
 
@@ -657,5 +656,3 @@ void UObjectHierarchySerializer::SerializeExportedObject(TSharedPtr<FJsonObject>
         ResultJson->SetObjectField(TEXT("Properties"), Properties);
     }
 }
-
-PRAGMA_ENABLE_OPTIMIZATION

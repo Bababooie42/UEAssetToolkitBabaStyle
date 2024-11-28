@@ -3,7 +3,6 @@
 #include "Toolkit/AssetDumping/AssetTypeSerializerMacros.h"
 #include "Toolkit/ObjectHierarchySerializer.h"
 #include "Engine/FontFace.h"
-#include "Toolkit/PropertySerializer.h"
 #include "Toolkit/AssetTypes/AssetHelper.h"
 
 void UFontFaceAssetSerializer::SerializeAsset(TSharedRef<FSerializationContext> Context) const {

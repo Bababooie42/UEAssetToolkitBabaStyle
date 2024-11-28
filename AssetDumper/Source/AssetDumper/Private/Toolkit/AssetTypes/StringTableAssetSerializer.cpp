@@ -1,7 +1,6 @@
 #include "Toolkit/AssetTypes/StringTableAssetSerializer.h"
 #include "Toolkit/AssetDumping/SerializationContext.h"
 #include "Toolkit/AssetDumping/AssetTypeSerializerMacros.h"
-#include "Toolkit/ObjectHierarchySerializer.h"
 #include "Internationalization/StringTable.h"
 #include "Internationalization/StringTableCore.h"
 
