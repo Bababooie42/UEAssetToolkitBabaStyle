@@ -411,27 +411,44 @@ void UMaterialGenerator::ApplyMaterialParameterValueChanges(UMaterial* Material,
 		}
 	}
 
+	// TODO: Was previously using FindChecked, but one particular material has a font expression present in CachedExpresisonData
+	// but the parameter doesn't actually exist. Not sure how to handle this properly, but for now just logging it is fine.
 	for (const TParameterValueChange<float>& ScalarParameter : LayoutChangeInfo.ScalarParameterValueChanges) {
-		UMaterialExpressionScalarParameter* Parameter = ScalarParameters.FindChecked(ScalarParameter.ParameterName);
+		UMaterialExpressionScalarParameter** ParameterPtr = ScalarParameters.Find(ScalarParameter.ParameterName);
+		if (!ensureMsgf(ParameterPtr, TEXT("Material %s has a scalar parameter '%s' that was not found"), *Material->GetPathName(), *ScalarParameter.ParameterName.ToString()))
+			continue;
+		UMaterialExpressionScalarParameter* Parameter = *ParameterPtr;
 		Parameter->DefaultValue = ScalarParameter.NewValue;
 	}
 
 	for (const TParameterValueChange<FLinearColor>& VectorParameter : LayoutChangeInfo.VectorParameterValueChanges) {
-		UMaterialExpressionVectorParameter* Parameter = VectorParameters.FindChecked(VectorParameter.ParameterName);
+		UMaterialExpressionVectorParameter** ParameterPtr = VectorParameters.Find(VectorParameter.ParameterName);
+		if (!ensureMsgf(ParameterPtr, TEXT("Material %s has a vector parameter '%s' that was not found"), *Material->GetPathName(), *VectorParameter.ParameterName.ToString()))
+			continue;
+		UMaterialExpressionVectorParameter* Parameter = *ParameterPtr;
 		Parameter->DefaultValue = VectorParameter.NewValue;
 	}
-	for (const TParameterValueChange<TSoftObjectPtr<UTexture>> TextureParameter : LayoutChangeInfo.TextureParameterValueChanges) {
-		UMaterialExpressionTextureSampleParameter* Parameter = TextureParameters.FindChecked(TextureParameter.ParameterName);
+	for (const TParameterValueChange<TSoftObjectPtr<UTexture>>& TextureParameter : LayoutChangeInfo.TextureParameterValueChanges) {
+		UMaterialExpressionTextureSampleParameter** ParameterPtr = TextureParameters.Find(TextureParameter.ParameterName);
+		if (!ensureMsgf(ParameterPtr, TEXT("Material %s has a texture parameter '%s' that was not found"), *Material->GetPathName(), *TextureParameter.ParameterName.ToString()))
+			continue;
+		UMaterialExpressionTextureSampleParameter* Parameter = *ParameterPtr;
 		Parameter->Texture = TextureParameter.NewValue.Get();
 		Parameter->AutoSetSampleType();
 	}
 	for (const TParameterValueChange<FSimpleFontParameterValue>& FontParameter : LayoutChangeInfo.FontParameterValueChanges) {
-		UMaterialExpressionFontSampleParameter* Parameter = FontParameters.FindChecked(FontParameter.ParameterName);
+		UMaterialExpressionFontSampleParameter** ParameterPtr = FontParameters.Find(FontParameter.ParameterName);
+		if (!ensureMsgf(ParameterPtr, TEXT("Material %s has a font parameter '%s' that was not found"), *Material->GetPathName(), *FontParameter.ParameterName.ToString()))
+			continue;
+		UMaterialExpressionFontSampleParameter* Parameter = *ParameterPtr;		
 		Parameter->Font = FontParameter.NewValue.Font.Get();
 		Parameter->FontTexturePage = FontParameter.NewValue.FontPage;
 	}
-	for (const TParameterValueChange<TSoftObjectPtr<URuntimeVirtualTexture>> TextureParameter : LayoutChangeInfo.VirtualTextureParameterValueChanges) {
-		UMaterialExpressionRuntimeVirtualTextureSampleParameter* Parameter = VirtualTextureParameters.FindChecked(TextureParameter.ParameterName);
+	for (const TParameterValueChange<TSoftObjectPtr<URuntimeVirtualTexture>>& TextureParameter : LayoutChangeInfo.VirtualTextureParameterValueChanges) {
+		UMaterialExpressionRuntimeVirtualTextureSampleParameter** ParameterPtr = VirtualTextureParameters.Find(TextureParameter.ParameterName);
+		if (!ensureMsgf(ParameterPtr, TEXT("Material %s has a virtual texture parameter '%s' that was not found"), *Material->GetPathName(), *TextureParameter.ParameterName.ToString()))
+			continue;
+		UMaterialExpressionRuntimeVirtualTextureSampleParameter* Parameter = *ParameterPtr;
 		Parameter->VirtualTexture = TextureParameter.NewValue.Get();
 	}
 }
