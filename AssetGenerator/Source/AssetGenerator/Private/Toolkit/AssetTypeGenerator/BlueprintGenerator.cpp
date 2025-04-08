@@ -782,6 +782,12 @@ bool FBlueprintGeneratorUtils::CreateNewBlueprintFunctions(UBlueprint* Blueprint
 		if (OverridenFunction) {
 			UK2Node_EditablePinBase* const* FunctionImplementation = FunctionAndEventNodes.Find(Function.FunctionName);
 
+			//We need to recreate the node if it was a custom event before, but now it is an override
+			if (FunctionImplementation != NULL && (*FunctionImplementation)->IsA(UK2Node_CustomEvent::StaticClass())) {
+				FBlueprintEditorUtils::RemoveNode(Blueprint, *FunctionImplementation, true);
+				FunctionImplementation = NULL;
+			}
+			
 			//We want to create the override even if function exists, but it's actually a ghost node
 			if ((FunctionImplementation == NULL || (*FunctionImplementation)->IsAutomaticallyPlacedGhostNode()) && bCreateFunctionOverrides) {
 				const bool bShouldGenerateAsEvent = Function.bIsCallingIntoUbergraph && UEdGraphSchema_K2::FunctionCanBePlacedAsEvent(OverridenFunction);
