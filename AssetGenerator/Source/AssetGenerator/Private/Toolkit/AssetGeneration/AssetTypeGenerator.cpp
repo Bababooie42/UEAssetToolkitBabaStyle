@@ -29,7 +29,7 @@ void UAssetTypeGenerator::PopulateReferencedObjectsDependencies(TArray<FPackageD
 	GetObjectSerializer()->CollectReferencedPackages(ReferencedObjects, OutReferencedPackages);
 
 	for (const FString& DependencyPackageName : OutReferencedPackages) {
-		OutDependencies.Add(FPackageDependency{*DependencyPackageName, EAssetGenerationStage::CDO_FINALIZATION});
+		OutDependencies.Add(FPackageDependency{*DependencyPackageName, EAssetGenerationStage::CONSTRUCTION});
 	}
 }
 
