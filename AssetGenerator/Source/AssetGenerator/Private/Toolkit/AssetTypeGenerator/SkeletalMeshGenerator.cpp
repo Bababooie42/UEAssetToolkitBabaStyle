@@ -1,6 +1,5 @@
 #include "Toolkit/AssetTypeGenerator/SkeletalMeshGenerator.h"
 #include "AutomatedAssetImportData.h"
-#include "MeshDescription.h"
 #include "Dom/JsonObject.h"
 #include "Toolkit/ObjectHierarchySerializer.h"
 #include "EditorFramework/AssetImportData.h"

@@ -8,7 +8,6 @@
 #include "Toolkit/AssetTypes/BlueprintAssetSerializer.h"
 #include "Components/NamedSlot.h"
 #include "Channels/MovieSceneEvent.h"
-#include "Sections/MovieSceneEventSection.h"
 #include "Sections/MovieSceneEventTriggerSection.h"
 
 void UUserWidgetAssetSerializer::SerializeAsset(TSharedRef<FSerializationContext> Context) const {

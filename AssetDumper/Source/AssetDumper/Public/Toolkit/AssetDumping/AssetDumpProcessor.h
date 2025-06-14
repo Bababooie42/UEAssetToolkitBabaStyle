@@ -2,7 +2,6 @@
 #include "CoreMinimal.h"
 #include "Tickable.h"
 #include "AssetRegistry/AssetData.h"
-#include "AssetDumperModule.h"
 
 /** Holds asset dumping related settings */
 struct ASSETDUMPER_API FAssetDumpSettings {

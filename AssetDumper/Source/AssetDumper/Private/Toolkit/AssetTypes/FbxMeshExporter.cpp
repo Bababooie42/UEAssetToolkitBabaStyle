@@ -1,5 +1,4 @@
 #include "Toolkit/AssetTypes/FbxMeshExporter.h"
-#include "AnimEncoding.h"
 #include "AssetDumperModule.h"
 #include "Rendering/SkeletalMeshLODRenderData.h"
 #include "Rendering/SkeletalMeshRenderData.h"
@@ -861,6 +860,9 @@ void FFbxMeshExporter::ExportSkeletalMesh(const FSkeletalMeshLODRenderData& Skel
         const uint32 NumTriangles = MeshSection.NumTriangles;
         const uint32 StartVertexIndex = MeshSection.BaseIndex;
 
+    	if (!ensure(ReferencedMaterials.IsValidIndex(MeshSection.MaterialIndex)))
+    		continue;
+    	
         //Create dummy material for this section
         const FString MaterialSlotName = ReferencedMaterials[MeshSection.MaterialIndex].MaterialSlotName.ToString();
         const int32 MaterialIndex = ExportDummyMaterialIntoFbxScene(MaterialSlotName, MeshNode);

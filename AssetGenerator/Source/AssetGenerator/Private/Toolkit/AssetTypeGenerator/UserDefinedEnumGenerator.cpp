@@ -1,7 +1,6 @@
 #include "Toolkit/AssetTypeGenerator/UserDefinedEnumGenerator.h"
 #include "Dom/JsonObject.h"
 #include "Engine/UserDefinedEnum.h"
-#include "Toolkit/ObjectHierarchySerializer.h"
 
 void UUserDefinedEnumGenerator::CreateAssetPackage() {
 	UPackage* NewPackage = CreatePackage(*GetPackageName().ToString());

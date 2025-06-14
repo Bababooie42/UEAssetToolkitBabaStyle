@@ -1,5 +1,4 @@
 #pragma once
-#include "Blueprint/WidgetTree.h"
 #include "Toolkit/AssetDumping/AssetTypeSerializer.h"
 #include "UserWidgetAssetSerializer.generated.h"
 

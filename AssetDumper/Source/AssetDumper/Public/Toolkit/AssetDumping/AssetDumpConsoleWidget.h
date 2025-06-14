@@ -1,6 +1,10 @@
 #pragma once
-#include "Slate.h"
+
 #include "Framework/Text/BaseTextLayoutMarshaller.h"
+#include "Widgets/SCompoundWidget.h"
+#include "Misc/OutputDevice.h"
+#include "AssetDumpProcessor.h"
+#include "Widgets/Input/SMultiLineEditableTextBox.h"
 
 struct FAssetDumpLogMessage {
 	TSharedRef<FString> Message;
@@ -21,11 +25,11 @@ public:
 	SLATE_BEGIN_ARGS(SAssetDumpConsoleWidget) {}
 	SLATE_END_ARGS()
 
-    void Construct(const FArguments& InArgs, TSharedRef<class FAssetDumpProcessor> DumpProcessor);
+    void Construct(const FArguments& InArgs, TSharedRef<FAssetDumpProcessor> DumpProcessor);
 	virtual void Tick(const FGeometry& AllottedGeometry, const double InCurrentTime, const float InDeltaTime) override;
 	virtual void Serialize(const TCHAR* V, ELogVerbosity::Type Verbosity, const FName& Category) override;
 
-	static TSharedRef<SWindow> CreateForAssetDumper(TSharedRef<class FAssetDumpProcessor> DumpProcessor);
+	static TSharedRef<SWindow> CreateForAssetDumper(TSharedRef<FAssetDumpProcessor> DumpProcessor);
 	
 	~SAssetDumpConsoleWidget();
 	SAssetDumpConsoleWidget();
@@ -34,8 +38,8 @@ protected:
 	void OnUserScrolled(float ScrollOffset);
 	FText GetProgressBarText() const;
 
-	TSharedPtr<class SMultiLineEditableTextBox> MessagesTextBox;
-	TSharedPtr<class FAssetDumpProcessor> AssetDumpProcessor;
+	TSharedPtr<SMultiLineEditableTextBox> MessagesTextBox;
+	TSharedPtr<FAssetDumpProcessor> AssetDumpProcessor;
 	TSharedPtr<class FAssetDumpConsoleTextLayoutMarshaller> MessagesTextMarshaller;
 	bool bIsUserScrolled;
 	mutable FText ProgressBarDisplayText;

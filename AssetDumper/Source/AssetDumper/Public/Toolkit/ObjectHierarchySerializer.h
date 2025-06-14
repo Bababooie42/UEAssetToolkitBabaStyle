@@ -1,6 +1,5 @@
 #pragma once
 #include "UObject/Object.h"
-#include "Json.h"
 #include "ObjectHierarchySerializer.generated.h"
 
 class UPropertySerializer;

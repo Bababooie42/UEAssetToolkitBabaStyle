@@ -1,6 +1,5 @@
 #pragma once
 #include "AssetDumpProcessor.h"
-#include "Slate.h"
 
 class SAssetDumperWidget : public SCompoundWidget {
 public:

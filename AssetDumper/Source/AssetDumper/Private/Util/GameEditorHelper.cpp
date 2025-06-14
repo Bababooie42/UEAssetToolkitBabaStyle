@@ -1,5 +1,4 @@
 #include "Util/GameEditorHelper.h"
-#include "Slate.h"
 #include "Engine/GameEngine.h"
 #if WITH_EDITOR
 #include "Interfaces/IMainFrameModule.h"

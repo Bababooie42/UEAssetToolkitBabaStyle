@@ -4,6 +4,7 @@
 #include "Materials/MaterialExpressionStaticBoolParameter.h"
 #include "Materials/MaterialExpressionStaticComponentMaskParameter.h"
 #include "Materials/MaterialExpressionStaticSwitchParameter.h"
+#include "Materials/MaterialInstanceConstant.h"
 #include "Toolkit/ObjectHierarchySerializer.h"
 #include "Toolkit/PropertySerializer.h"
 #include "Toolkit/AssetDumping/AssetTypeSerializerMacros.h"

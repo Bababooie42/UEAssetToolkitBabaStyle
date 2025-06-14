@@ -13,8 +13,7 @@
 #include "Windows/MinWindows.h"
 #include "Windows/COMPointer.h"
 #include "Windows/AllowWindowsPlatformTypes.h"
-    #include <commdlg.h>
-    #include <shlobj.h>
+#include <shlobj.h>
     #include <LM.h>
 #include "Windows/HideWindowsPlatformTypes.h"
 #pragma warning(pop)

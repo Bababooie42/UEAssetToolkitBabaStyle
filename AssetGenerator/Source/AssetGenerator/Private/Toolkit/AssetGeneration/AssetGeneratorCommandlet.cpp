@@ -5,7 +5,6 @@
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "ShaderCompiler.h"
 #include "AssetRegistry/Private/AssetRegistry.h"
-#include "HAL/PlatformApplicationMisc.h"
 #include "Toolkit/AssetGeneration/AssetGenerationUtil.h"
 
 DEFINE_LOG_CATEGORY(LogAssetGeneratorCommandlet)

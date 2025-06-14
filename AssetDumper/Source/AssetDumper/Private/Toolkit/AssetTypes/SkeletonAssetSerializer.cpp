@@ -1,5 +1,4 @@
 #include "Toolkit/AssetTypes/SkeletonAssetSerializer.h"
-#include "Toolkit/AssetTypes/AssetHelper.h"
 #include "Toolkit/AssetTypes/FbxMeshExporter.h"
 #include "Toolkit/PropertySerializer.h"
 #include "Toolkit/AssetTypes/SkeletalMeshAssetSerializer.h"

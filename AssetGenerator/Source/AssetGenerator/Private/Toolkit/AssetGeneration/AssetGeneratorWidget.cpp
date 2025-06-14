@@ -3,6 +3,8 @@
 #include "IDesktopPlatform.h"
 #include "AssetGeneration/AssetGeneratorLocalSettings.h"
 #include "Toolkit/AssetGeneration/AssetDumpViewWidget.h"
+#include "Toolkit/AssetGeneration/AssetTypeGenerator.h"
+#include "Widgets/Input/SSlider.h"
 
 #define LOCTEXT_NAMESPACE "AssetGenerator"
 

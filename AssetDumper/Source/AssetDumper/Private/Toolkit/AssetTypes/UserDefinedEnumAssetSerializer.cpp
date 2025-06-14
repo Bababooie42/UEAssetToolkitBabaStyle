@@ -1,7 +1,6 @@
 #include "Toolkit/AssetTypes/UserDefinedEnumAssetSerializer.h"
 #include "Toolkit/AssetDumping/SerializationContext.h"
 #include "Toolkit/AssetDumping/AssetTypeSerializerMacros.h"
-#include "Toolkit/ObjectHierarchySerializer.h"
 #include "Engine/UserDefinedEnum.h"
 #include "Toolkit/AssetTypes/AssetHelper.h"
 

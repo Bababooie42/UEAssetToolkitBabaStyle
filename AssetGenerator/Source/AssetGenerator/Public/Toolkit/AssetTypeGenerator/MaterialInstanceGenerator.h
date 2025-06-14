@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SimpleAssetGenerator.h"
-#include "Materials/MaterialInstanceConstant.h"
 #include "MaterialInstanceGenerator.generated.h"
 
 UCLASS(MinimalAPI)

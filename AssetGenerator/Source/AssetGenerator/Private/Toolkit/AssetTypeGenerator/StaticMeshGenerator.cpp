@@ -1,6 +1,5 @@
 #include "Toolkit/AssetTypeGenerator/StaticMeshGenerator.h"
 #include "AutomatedAssetImportData.h"
-#include "MeshDescription.h"
 #include "AI/Navigation/NavCollisionBase.h"
 #include "Dom/JsonObject.h"
 #include "Toolkit/ObjectHierarchySerializer.h"
@@ -207,9 +206,23 @@ void UStaticMeshGenerator::PopulateStageDependencies(TArray<FPackageDependency>&
 		const TArray<TSharedPtr<FJsonValue>>& Materials = AssetData->GetArrayField(TEXT("Materials"));
 		const int32 NavCollisionObjectIndex = AssetData->GetIntegerField(TEXT("NavCollision"));
 		const int32 BodySetupObjectIndex = AssetData->GetIntegerField(TEXT("BodySetup"));
+
+		const TArray<TSharedPtr<FJsonValue>> AssetUserDataObjects = AssetObjectProperties->GetArrayField(TEXT("AssetUserData"));
+
+		TArray<int32> AssetUserDataObjectIndices;
+		for (const TSharedPtr<FJsonValue>& ObjectIndexValue : AssetUserDataObjects) {
+			AssetUserDataObjectIndices.Add((int32) ObjectIndexValue->AsNumber());
+		}
 		
 		TArray<FString> OutReferencedPackages;
-		GetObjectSerializer()->CollectReferencedPackages(ReferencedObjects, OutReferencedPackages);
+		for (const TSharedPtr<FJsonValue>& ObjectIndexValue : ReferencedObjects) {
+			const int32 ObjectIndex = (int32) ObjectIndexValue->AsNumber();
+
+			if (!AssetUserDataObjectIndices.Contains(ObjectIndex)) {
+				GetObjectSerializer()->CollectObjectPackages(ObjectIndex, OutReferencedPackages);
+			}
+		}
+		
 		GetObjectSerializer()->CollectObjectPackages(NavCollisionObjectIndex, OutReferencedPackages);
 		GetObjectSerializer()->CollectObjectPackages(BodySetupObjectIndex, OutReferencedPackages);
 

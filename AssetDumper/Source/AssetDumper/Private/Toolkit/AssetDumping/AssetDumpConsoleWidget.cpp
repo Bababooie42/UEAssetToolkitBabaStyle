@@ -1,6 +1,10 @@
 #include "Toolkit/AssetDumping/AssetDumpConsoleWidget.h"
+
+#include "Framework/Text/SlateTextRun.h"
+#include "Misc/OutputDeviceHelper.h"
 #include "Toolkit/AssetDumping/AssetDumpProcessor.h"
 #include "Util/GameEditorHelper.h"
+#include "Widgets/Notifications/SProgressBar.h"
 
 #define LOCTEXT_NAMESPACE "AssetDumper"
 

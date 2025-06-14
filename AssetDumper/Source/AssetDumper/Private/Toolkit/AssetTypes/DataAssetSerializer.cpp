@@ -2,7 +2,6 @@
 
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "Toolkit/ObjectHierarchySerializer.h"
-#include "Toolkit/PropertySerializer.h"
 #include "Toolkit/AssetDumping/AssetTypeSerializerMacros.h"
 #include "Toolkit/AssetDumping/SerializationContext.h"
 
